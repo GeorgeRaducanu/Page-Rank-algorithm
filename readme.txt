@@ -1,29 +1,29 @@
 Copyright Raducanu George-Cristian 311CA 2021-2022
-Tema1 MN
-Iterative
-Acest subpunct a fost rezolvat in felul urmator:
-Am realizat citirile utilizand functtile predefinite de citire din Octave,
-Am transformat lista de adiacenta in matrice de adiacenta, memorand de asemenea si nr de muchii ce corespund unui nod.
-In cazul in care acel nod are referinta la el insusi il vom face 0 in matricea de adiacenta si vom decrementa L ul.
-In continuare am construit matricea M descrisa in sursa [1] iar prin aplicarea algoritmului iterative tot din [1], pana cand
-atingem precizia dorita se obtine R ul si se rezolva task ul.
+Topic1 MN
+iteration
+This subpoint was resolved as follows:
+We performed the readings using the predefined reading functions in Octave,
+I transformed the adjacency list into an adjacency matrix, also memorizing the number of edges corresponding to a node.
+If that node has a reference to itself, we will make it 0 in the adjacency matrix and decrement the L.
+Next, we built the matrix M described in the source [1] and by applying the iterative algorithm also from [1], until
+we reach the desired precision, the R is obtained and the task is solved.
 
 Algebraic
-Citirea si prelucrarea datelor este identica ca la subpunctul anterior.
-Trecand la limita relatia de recureta ( t+1 = t adica t tinde la infinit - nr mare de iteratii) rezulta R = dMR + (1-d)/N * 1 iar scotand R din relatia respectiva rezulta
-R in forma algebrica utilizand inversa.
+Data reading and processing is identical to the previous subsection.
+Going to the limit of the recurrence relation (t+1 = t, that means t tends to infinity - large number of iterations) results in R = dMR + (1-d)/N * 1 and removing R from the respective relation results
+R in algebraic form using the inverse.
 
 PR_Inv
-Pentru a calcula relativ eficient inversa unei matrici descompunem mai intai QR matricea data utilizand algoritmul GM modificat prezentat in laborator.
-In continuarea avem QRT = I unde T este inversa lui A. Q ortogonalarezulta RT = Qt. In continuare interpretam fiecare coloana din T ca fiind o necuniscuta si
-o sa obtinem n sisteme de ecuatii liniare iar intrucat R este superior triunghiulara pentru rezolvarea lor eficienta vom utiliza SST care si el a fost prezentat la
-laborator. Reunind la final solutiile (adica cele n coloane) rezulta T adica inv(A)
+To calculate the inverse of a matrix relatively efficiently, we first decompose the given matrix QR using the modified GM algorithm presented in the laboratory.
+In the following we have QRT = I where T is the inverse of A. The orthogonal Q results in RT = Qt. Next, we interpret each column in T as an unknown and
+we will obtain in systems of linear equations and since R is superior triangular for their efficient solution we will use SST which was also presented at
+laboratory. Putting together the solutions at the end (that is, the ones in the columns), the result is T, that is, inv(A)
 
-Apartenenta
-Functia u(x) trebuie sa fie continua, deci a = 1/(val2 - val1), b = -val1*a; 
-In continuare daca x < val 1, y = 0, daca x >=val1 && x <= val2 y = ax+b si in caz contrsrr y = 1.
+membership
+The function u(x) must be continuous, so a = 1/(val2 - val1), b = -val1*a;
+Next, if x < val 1, y = 0, if x >=val1 && x <= val2 y = ax+b and otherwise y = 1.
 
 PageRank
-Acest program este "rezultatul final" si combina toti algoritmii de pana acuma. Citirea o mai facem inca o data doar pentru a obtine n, val1 si val2.
-Apelam Iterative si Algebraic iar apoi vom sorta R2 Algebraic impreuna cu un vector auxiliar de indici. Pentru afisare afisam i, v(i) unde v este vectorul auxiliar
-care a fost "sortat" dar si Apartenenta (R2(i), val1, val2) pentru fiecare i de la 1 la N si astfel se termina programul.
+This program is the "final result" and combines all the algorithms so far. We do the reading one more time just to get n, val1 and val2.
+We call Iterative and Algebraic and then we will sort R2 Algebraic together with an auxiliary vector of indices. For display we display i, v(i) where v is the auxiliary vector
+which was "sorted" but also the Membership (R2(i), val1, val2) for each i from 1 to N and thus the program ends.
